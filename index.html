@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyTube</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "992px",
+            lx: "1320px",
+          },
+          extend: {
+            colors: {
+              primary: "#FF1F3D",
+              "black-25": "#252525",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter">
+    <header class="mt-14 container mx-auto">
+      <nav class=" flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img src="./image/y-logo.png" alt="logo" />
+          <h2 class="text-3xl font-bold">
+            <span class="uppercase text-primary">ph</span> Tube
+          </h2>
+        </div>
+        <button class="btn btn-warning text-lg font-medium">
+          Sort by vies
+        </button>
+        <button
+          class="btn bg-primary text-lg font-medium text-white hover:bg-pink-700"
+        >
+          Blog
+        </button>
+    </nav>
+    <div class="divider"></div>
+    </header>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
