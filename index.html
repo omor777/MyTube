@@ -39,8 +39,8 @@
             <span class="uppercase text-primary">ph</span> Tube
           </h2>
         </div>
-        <button class="btn btn-warning text-lg font-medium">
-          Sort by vies
+        <button onclick="sortVideoByView()" id="sort-video" class="btn btn-warning text-lg font-medium">
+          Sort by views
         </button>
         <button
           class="btn bg-primary text-lg font-medium text-white hover:bg-pink-700"
@@ -57,10 +57,23 @@
           class="my-8 flex items-center justify-center gap-6"
         ></div>
 
+        <!--  -->
+        <div id="video-placeholder" class="hidden">
+          <div class="flex flex-col items-center justify-center mt-40">
+            <img src="./image/no-video.png" alt="" />
+            <h2
+              class="text-3xl font-bold leading-[44px] text-white/70 mt-6      nn     text-center"
+            >
+              Oops!! Sorry, There is no <br />
+              content here
+            </h2>
+          </div>
+        </div>
+
         <!-- video container -->
         <div
           id="video-container"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 "
         ></div>
       </section>
     </main>
