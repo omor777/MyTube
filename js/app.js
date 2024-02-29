@@ -23,6 +23,13 @@ const createButton = (data) => {
     btnContainer.appendChild(div);
   });
 };
+/**
+ *
+ * @param {Object} video
+ */
+const showVerifiedBadge = (video) => {
+  console.log(video);
+};
 
 /**
  *
@@ -32,20 +39,23 @@ const displayVideo = (data) => {
   const videoContainer = document.getElementById("video-container");
   data.forEach((video) => {
     console.log(video);
+    const verify = video?.authors[0]?.verified;
     const div = document.createElement("div");
     div.innerHTML = `
-   <div class="card card-compact w-96 bg-base-100 shadow-xl">
+   <div class="card card-compact  bg-base-100 shadow-xl">
      <figure>
-      <img src="${video?.thumbnail}" alt="Shoes" />
+      <img class="h-[200px] w-full" src="${video?.thumbnail}" alt="Shoes" />
       </figure>
   <div class="px-4 pb-6">
     <div class="flex items-start gap-4 mt-5">
-        <img class="size-10 rounded-full object-cover" src="${video?.authors[0]?.profile_picture}"/>
+        <img class="size-10 rounded-full object-cover" src="${
+          video?.authors[0]?.profile_picture
+        }"/>
         <div class="space-y-[10px]">
         <h3 class="font-bold text-white leading-6 ">${video.title}</h3>
          <div class="flex items-center gap-3">
          <p>${video?.authors[0]?.profile_name}</p>
-          <img src="../image/verify.png"/>
+          ${verify ? `<img src="../image/verify.png"/>` : ""}
          </div>
          <p><span>${video.others?.views}</span> views</p>
         </div>
@@ -66,5 +76,3 @@ const loadDataByCategory = async (id) => {
 };
 loadDataByCategory(categoryId);
 loadData();
-
-
